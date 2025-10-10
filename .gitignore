@@ -1,0 +1,5 @@
+internal/rom/unmodified/*.sfc
+internal/rom/modified/*.sfc
+internal/uncompressed/*.bin
+internal/logs/*.log
+internal/modbin/*

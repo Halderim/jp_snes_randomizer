@@ -1,0 +1,3 @@
+you will need to place the uncompressed binary files here
+those binaries need to be from the rev 1 usa rom
+the naming of the files can be seen in the idcards.go
