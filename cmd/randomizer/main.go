@@ -18,6 +18,7 @@ import (
 func main() {
 	binDir := flag.String("bin", "internal/uncompressed", "Input BIN dir")
 	seed := flag.Int64("seed", 0, "Randomizer seed (0 = use current time)")
+	start := flag.Bool("start", false, "Apply random start location")
 	flag.Parse()
 
 	finalSeed := *seed
@@ -75,9 +76,13 @@ func main() {
 		log.Fatal("❌ Pointer patching failed:", err)
 	}
 
-	fmt.Println("🔗 Apply random start location...")
-	if err := rom.ApplyRandomStartLocation(expandedRom, finalSeed, logPath); err != nil {
-		log.Fatal("❌ Applying random start location failed:", err)
+	if *start {
+		fmt.Println("🔗 Apply random start location...")
+		if err := rom.ApplyRandomStartLocation(expandedRom, finalSeed, logPath); err != nil {
+			log.Fatal("❌ Applying random start location failed:", err)
+		}
+	} else {
+		fmt.Println("ℹ️  Skipping random start location.")
 	}
 
 	// Done
