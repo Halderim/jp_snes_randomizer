@@ -11,6 +11,7 @@ import (
 
 	"jp_snes_randomizer/internal/rom"
 	"jp_snes_randomizer/internal/tools/rncpropack"
+
 	"jp_snes_randomizer/internal/uncompressed"
 )
 
@@ -74,7 +75,12 @@ func main() {
 		log.Fatal("❌ Pointer patching failed:", err)
 	}
 
-	// 5) Done
+	fmt.Println("🔗 Apply random start location...")
+	if err := rom.ApplyRandomStartLocation(expandedRom, finalSeed, logPath); err != nil {
+		log.Fatal("❌ Applying random start location failed:", err)
+	}
+
+	// Done
 	fmt.Println("✅ Done. See log:", logPath)
 }
 
