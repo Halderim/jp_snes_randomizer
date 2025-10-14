@@ -85,6 +85,11 @@ func main() {
 		fmt.Println("ℹ️  Skipping random start location.")
 	}
 
+	fmt.Println("🔗 Patch in QoL patches")
+	if err := rom.ApplyQolPatches(expandedRom, finalSeed, logPath); err != nil {
+		log.Fatal("❌ Applying QoL patches failed:", err)
+	}
+
 	// Done
 	fmt.Println("✅ Done. See log:", logPath)
 }
