@@ -32,6 +32,14 @@ go run ./cmd/randomizer [--seed] [--start]
 - difficulty settings
 - web frontend for the randomizer
 
+### Version 0.1.1 alpha
+QoL patches added to give infinite lives add the save feature from Yoshifanatic\
+Thanks to coconutED for writing a basic logic that makes most if not all seeds beatable 
+Added:
+- QoL patches 
+- More starting locations
+- logic to make seeds beatable, preventing cards to be placed at unreachable locations
+
 ### Version 0.1 alpha
 Initial version of the rando with no logic, you may be softlocked as a ID card may not be reachable\
 Start locations can be randomized 4 new locations + default location the locations are currently placed in a way that you are not softlocked by the start location\
