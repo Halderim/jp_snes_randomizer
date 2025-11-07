@@ -17,8 +17,8 @@ go run ./cmd/randomizer [--seed] [--start] [--difficulty]
 
 ### options
 --seed Int64 sets the seed that will be used to randomize the game for example --seed 12345 \
---start boolean if the option is true a randomized location will be used to start the game default: false
---difficulty 0,1,2 switches between the different randomizer levels 0 only changes id cards, 1 changes items per floor, 2 changes items per building
+--start boolean if the option is true a randomized location will be used to start the game default: false\
+--difficulty 0,1,2 switches between the different randomizer levels of difficulty, 0 only changes id cards, 1 changes items per floor, 2 changes items per building default: 0
 
 ## Future plans if they can be realized 
 - adding more locations to start the game
