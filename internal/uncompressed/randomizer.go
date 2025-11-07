@@ -9,7 +9,9 @@ import (
 	"time"
 )
 
-// RandomizeCards mischt die ID-Karten (außer Hammond) und schreibt Änderungen mit Logausgabe
+// RandomizeCards shuffles the ID card locations based on the provided seed
+// this is with a basic logic to ensure progression is possible
+// it only shuffles the cards among the locations, not the locations themselves
 func RandomizeCards(binDir string, outDir string, seed int64, logPath string) error {
 	r := rand.New(rand.NewSource(seed))
 
@@ -123,7 +125,6 @@ func RandomizeCards(binDir string, outDir string, seed int64, logPath string) er
 
 	// fmt.Println(indices)
 
-	// Logdatei im gleichen Stil wie der ROM-Patcher
 	log := filepath.Join(logPath, fmt.Sprintf("randomizer_log_seed%d.log", seed))
 	logFile, err := os.OpenFile(log, os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
 	if err != nil {

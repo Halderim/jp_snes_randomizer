@@ -3,7 +3,7 @@ package uncompressed
 type CardLocation struct {
 	File   string
 	Index  byte
-	Offset int // absoluter Offset im BIN-File, wo das Kartenindex-Byte sitzt
+	Offset int // Offset in BIN-File
 }
 
 var CardLocations = []CardLocation{

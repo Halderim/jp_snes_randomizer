@@ -16,9 +16,10 @@ import (
 )
 
 func main() {
-	binDir := flag.String("bin", "internal/uncompressed", "Input BIN dir")
+
 	seed := flag.Int64("seed", 0, "Randomizer seed (0 = use current time)")
 	start := flag.Bool("start", false, "Apply random start location")
+	difficulty := flag.Int64("difficulty", 0, "Set game difficulty")
 	flag.Parse()
 
 	finalSeed := *seed
@@ -26,7 +27,17 @@ func main() {
 		finalSeed = time.Now().Unix()
 	}
 
-	outDir := filepath.Join("internal", "modbin", fmt.Sprintf("%d", finalSeed))
+	// === 2️⃣ BIN-Dateien vorbereiten ===
+	srcBinDir := "internal/uncompressed"
+	outDir := fmt.Sprintf("internal/modbin/%d", *seed)
+
+	fmt.Println("📂 Kopiere BIN-Dateien für Seed-Arbeitsverzeichnis...")
+	if err := copyBinFiles(srcBinDir, outDir); err != nil {
+		fmt.Println("❌ Fehler beim Kopieren der BIN-Dateien:", err)
+		return
+	}
+	fmt.Println("✅ BIN-Dateien kopiert nach:", outDir)
+
 	unmodifiedRom := "internal/rom/unmodified/jp_usa_rev1_ex.sfc"
 	outRomPath := "internal/rom/modified/"
 	expandedRom := filepath.Join(outRomPath, fmt.Sprintf("jp_randomized_seed%d.sfc", finalSeed))
@@ -50,9 +61,29 @@ func main() {
 
 	fmt.Println("🚀 Running randomizer with seed:", finalSeed)
 
-	// 1) Randomize (user-provided function)
-	if err := uncompressed.RandomizeCards(*binDir, outDir, finalSeed, logDir); err != nil {
-		log.Fatal("❌ Randomization failed:", err)
+	// 1) Randomize
+	if *difficulty < 0 || *difficulty > 2 {
+		log.Fatal("❌ Invalid difficulty level. Must be 0 (Easy), 1 (Normal), 2 (Hard), or 3 (Extreme).")
+	}
+	fmt.Printf("🎲 Randomizing items with difficulty level %d...\n", *difficulty)
+	if *difficulty == 0 {
+		if err := uncompressed.RandomizeCards(outDir, outDir, finalSeed, logDir); err != nil {
+			log.Fatal("❌ Randomization failed:", err)
+		}
+	} else if *difficulty == 1 {
+		if err := uncompressed.RandomizeCards(outDir, outDir, finalSeed, logDir); err != nil {
+			log.Fatal("❌ Randomization failed:", err)
+		}
+		if err := uncompressed.RandomizeLevelItems(outDir, outDir, finalSeed); err != nil {
+			log.Fatal(err)
+		}
+	} else if *difficulty == 2 {
+		if err := uncompressed.RandomizeCards(outDir, outDir, finalSeed, logDir); err != nil {
+			log.Fatal("❌ Randomization failed:", err)
+		}
+		if err := uncompressed.RandomizeBuildingItems(outDir, outDir, finalSeed); err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	// 2) Repack RNCs into ROM expanded area
@@ -113,4 +144,47 @@ func copyFile(src, dst string) error {
 	}
 
 	return destFile.Sync()
+}
+
+func copyBinFiles(srcDir, dstDir string) error {
+	return filepath.Walk(srcDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() {
+			return nil
+		}
+		if filepath.Ext(path) != ".bin" {
+			return nil
+		}
+
+		relPath, err := filepath.Rel(srcDir, path)
+		if err != nil {
+			return err
+		}
+		dstPath := filepath.Join(dstDir, relPath)
+
+		if err := os.MkdirAll(filepath.Dir(dstPath), 0755); err != nil {
+			return err
+		}
+
+		srcFile, err := os.Open(path)
+		if err != nil {
+			return err
+		}
+		defer srcFile.Close()
+
+		dstFile, err := os.Create(dstPath)
+		if err != nil {
+			return err
+		}
+		defer dstFile.Close()
+
+		if _, err := io.Copy(dstFile, srcFile); err != nil {
+			return err
+		}
+
+		fmt.Printf("→ %s\n", dstPath)
+		return nil
+	})
 }
