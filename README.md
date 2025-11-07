@@ -22,9 +22,9 @@ go run ./cmd/randomizer [--seed] [--start] [--difficulty]
 
 ## Future plans if they can be realized 
 - adding more locations to start the game
-- randomize locations of ID cards inside buildings not just swap the cards in their default location
-- randomize ammo types in buildings
-- randomize health items in buildings
+- ~~randomize locations of ID cards inside buildings not just swap the cards in their default location~~
+- ~~randomize ammo types in buildings~~
+- ~~randomize health items in buildings~~
 - randomize items in the overworld
 - randomize egg locations on the overworld
 - make eggs appear in buildings
