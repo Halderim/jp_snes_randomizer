@@ -13,11 +13,12 @@ https://github.com/Yoshifanatic1/Jurassic-Park-1-SNES-disassembly \
 https://github.com/lab313ru/rnc_propack_source/releases
 
 ### run default randomizer
-go run ./cmd/randomizer [--seed] [--start]
+go run ./cmd/randomizer [--seed] [--start] [--difficulty]
 
 ### options
 --seed Int64 sets the seed that will be used to randomize the game for example --seed 12345 \
 --start boolean if the option is true a randomized location will be used to start the game default: false
+--difficulty 0,1,2 switches between the different randomizer levels 0 only changes id cards, 1 changes items per floor, 2 changes items per building
 
 ## Future plans if they can be realized 
 - adding more locations to start the game
@@ -31,6 +32,14 @@ go run ./cmd/randomizer [--seed] [--start]
 - randomize building floors
 - difficulty settings
 - web frontend for the randomizer
+
+### Version 0.1.1 alpha
+The randomizer now can swap items inside a floor of a building or across a building when the difficulty is set to 1 or 2 
+There is no logic so far beside preventing from batteries spawning inside a dark room 
+Added:
+- Randomize items per floor
+- randomize items per building
+
 
 ### Version 0.1.1 alpha
 QoL patches added to give infinite lives add the save feature from Yoshifanatic\
