@@ -33,7 +33,7 @@ go run ./cmd/randomizer [--seed] [--start] [--difficulty]
 - difficulty settings
 - web frontend for the randomizer
 
-### Version 0.1.1 alpha
+### Version 0.2 alpha
 The randomizer now can swap items inside a floor of a building or across a building when the difficulty is set to 1 or 2 
 There is no logic so far beside preventing from batteries spawning inside a dark room 
 Added:
