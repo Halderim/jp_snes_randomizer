@@ -27,7 +27,7 @@ func main() {
 		finalSeed = time.Now().Unix()
 	}
 
-	// === 2️⃣ BIN-Dateien vorbereiten ===
+	// === 2️⃣ Prepare bin files===
 	srcBinDir := "internal/uncompressed"
 	outDir := fmt.Sprintf("internal/modbin/%d", *seed)
 
@@ -61,7 +61,7 @@ func main() {
 
 	fmt.Println("🚀 Running randomizer with seed:", finalSeed)
 
-	// 1) Randomize
+	// Randomize
 	if *difficulty < 0 || *difficulty > 2 {
 		log.Fatal("❌ Invalid difficulty level. Must be 0 (Easy), 1 (Normal), 2 (Hard), or 3 (Extreme).")
 	}
@@ -86,22 +86,27 @@ func main() {
 		}
 	}
 
-	// 2) Repack RNCs into ROM expanded area
+	fmt.Println("🔗 patch intro...")
+	if err := rom.PatchIntro(expandedRom, logPath); err != nil {
+		log.Fatal("❌ Intro patching failed:", err)
+	}
+
+	// Repack RNCs into ROM expanded area
 	fmt.Println("📀 Packing RNC Files...")
 	rncpropack.RepackAll(outDir, logPath)
 	fmt.Println("📀 Embedding RNCs into expanded ROM...")
-	newStarts, err := rom.AppendRNCsCompact(outDir, expandedRom, 0x300000, logPath, true)
+	newStarts, err := rom.AppendRNCsCompact(outDir, expandedRom, 0x200500, logPath, true)
 	if err != nil {
 		log.Fatal("❌ Embedding RNCs failed:", err)
 	}
 
-	// 3) Validate pointers
+	// Validate pointers
 	fmt.Println("🔍 Validating pointers...")
 	if err := rom.ValidatePointers(outDir, 0x400000, logPath); err != nil {
 		log.Fatal("❌ Pointer validation failed:", err)
 	}
 
-	// 4) Patch pointers in ROM
+	// Patch pointers in ROM
 	fmt.Println("🔗 Patching pointers...")
 	if err := rom.PatchPointers(expandedRom, rom.PointerList, newStarts, logPath); err != nil {
 		log.Fatal("❌ Pointer patching failed:", err)

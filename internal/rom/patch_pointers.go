@@ -12,8 +12,8 @@ func snesToRomOffset(addr int) int {
 	return bank*0x8000 + offset
 }
 
-// romToSNESAddr konvertiert einen ROM-Offset in die vollständige 24-bit SNES-Adresse (Bank<<16 | Addr)
-// für LoROM: SNES-Bank = 0x80 + bankNum
+// romToSNESAddr converts a ROM-Offset into a 24-bit SNES-address (Bank<<16 | Addr)
+// for LoROM: SNES-Bank = 0x80 + bankNum
 func romToSNESAddr(romOffset int) int {
 	bankNum := romOffset / 0x8000
 	snesBank := 0x80 + bankNum
@@ -21,8 +21,7 @@ func romToSNESAddr(romOffset int) int {
 	return (snesBank << 16) | addr
 }
 
-// PatchPointers aktualisiert Pointer im ROM basierend auf neuen Startadressen
-// pointerList enthält die Pointer-Locations (als SNES-Adressen), newStarts map enthält ROM-Offsets (int)
+// PatchPointers updates pointers to the new RNC locations in the rom
 func PatchPointers(romPath string, pointerList []PointerEntry, newStarts map[string]int, logPath string) error {
 	data, err := os.ReadFile(romPath)
 	if err != nil {
@@ -44,7 +43,7 @@ func PatchPointers(romPath string, pointerList []PointerEntry, newStarts map[str
 			continue
 		}
 
-		// SNES-Addressen in ROM-Offsets umwandeln (die Pointer-Bytes stehen an diesen SNES-Adressen im ROM)
+		// SNES-Address to ROM-Offsets
 		hiOff := snesToRomOffset(entry.Hi)
 		loOff := snesToRomOffset(entry.Lo)
 		bankOff := snesToRomOffset(entry.Bank)
@@ -55,7 +54,7 @@ func PatchPointers(romPath string, pointerList []PointerEntry, newStarts map[str
 			continue
 		}
 
-		// ROM-Offset -> SNES-Adresse (mit 0x80+ bank)
+		// ROM-Offset -> SNES-Adresse (0x80+ bank)
 		snesAddr := romToSNESAddr(newStart)
 
 		// Pointer-Bytes: Lo, Hi, Bank (LoROM little-endian storage)
@@ -63,17 +62,15 @@ func PatchPointers(romPath string, pointerList []PointerEntry, newStarts map[str
 		hi := byte((snesAddr >> 8) & 0xFF)
 		bank := byte((snesAddr >> 16) & 0xFF)
 
-		// Alte Werte sichern (in der üblichen Reihenfolge Lo, Hi, Bank)
 		old := []byte{data[loOff], data[hiOff], data[bankOff]}
 
-		// Neue Werte schreiben
 		data[loOff] = lo
 		data[hiOff] = hi
 		data[bankOff] = bank
 
 		newPtr := []byte{lo, hi, bank}
 
-		// Log: zeige alte bytes, neue bytes, ROM-Offset und die errechnete SNES-Adresse
+		// Log
 		line := fmt.Sprintf("%-35s | OLD %02X %02X %02X → NEW %02X %02X %02X (ROM:%06X → SNES:%06X)\n",
 			entry.Filename,
 			old[0], old[1], old[2],

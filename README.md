@@ -33,6 +33,15 @@ go run ./cmd/randomizer [--seed] [--start] [--difficulty]
 - difficulty settings
 - web frontend for the randomizer
 
+### Version 0.2.1 alpha
+Minor Update to the randomizer\
+Added:
+- Custom intro with version of the randomizer added
+
+Changes:
+- rnc files are placed into the rom starting at offset 0x200500 not 0x300000
+- more comments in english
+
 ### Version 0.2 alpha
 The randomizer now can swap items inside a floor of a building or across a building when the difficulty is set to 1 or 2 
 There is no logic so far beside preventing from batteries spawning inside a dark room 
