@@ -35,7 +35,7 @@ func AppendRNCsCompact(rncDir string, romPath string, startOffset int, logPath s
 	fmt.Fprintf(logFile, "ROM: %s\n", romPath)
 	fmt.Fprintf(logFile, "Startoffset: 0x%06X\n\n", startOffset)
 
-	// === 1️⃣ Alle .rnc-Dateien einlesen ===
+	// === Read .rnc-files ===
 	var blocks []RNCBlock
 	err = filepath.WalkDir(rncDir, func(path string, d fs.DirEntry, err error) error {
 		if err != nil {

@@ -112,6 +112,11 @@ func main() {
 		log.Fatal("❌ Pointer patching failed:", err)
 	}
 
+	fmt.Println("🔗 random overworld items...")
+	if err := rom.RandomizeOverworldItems(expandedRom, finalSeed, logPath); err != nil {
+		log.Fatal("❌ Applying random overworld items failed:", err)
+	}
+
 	if *start {
 		fmt.Println("🔗 Apply random start location...")
 		if err := rom.ApplyRandomStartLocation(expandedRom, finalSeed, logPath); err != nil {

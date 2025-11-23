@@ -25,13 +25,22 @@ go run ./cmd/randomizer [--seed] [--start] [--difficulty]
 - ~~randomize locations of ID cards inside buildings not just swap the cards in their default location~~
 - ~~randomize ammo types in buildings~~
 - ~~randomize health items in buildings~~
-- randomize items in the overworld
-- randomize egg locations on the overworld
+- ~~randomize items in the overworld~~
+- ~~randomize egg locations on the overworld~~
 - make eggs appear in buildings
 - randomize computer terminals
 - randomize building floors
 - difficulty settings
 - web frontend for the randomizer
+- implement logic to prevent softlocks in all difficulty settings https://github.com/Halderim/jpsnes_json_data
+
+### Version 0.3 alpha
+Feature update to the randomizer, the overworld items are now randomized, only the hammond id card remains in the default location until a logic to prevent softlocks is implemented
+Added:
+- randomizing locations of overworld items/eggs hammind id excluded
+
+Changes:
+- version 0.3 intro
 
 ### Version 0.2.1 alpha
 Minor Update to the randomizer\

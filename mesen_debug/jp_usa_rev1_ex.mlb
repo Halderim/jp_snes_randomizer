@@ -1,0 +1,810 @@
+﻿SnesWorkRam:0034-0035:TitleScreen_CursorXPosLo:Title Screen X Position Lo
+SnesWorkRam:0036-0037:TitleScreen_CursorYPosLo:Title Screen Y Position Lo
+SnesWorkRam:0067:Interior_CurrentRoom:Interior Current Room
+SnesWorkRam:00F0:Interior_TilePlayerIsTouching:Interior Tile the player is touching
+SnesWorkRam:0203:Global_Player_CurrentScoreThousandsDigit:Player Score Throunands Digit
+SnesWorkRam:0204:Global_Player_CurrentScoreHundredsDigit:Player Score Hundreds Digit
+SnesWorkRam:0205:Global_Player_CurrentScoreTensDigit:Player Score Tens Digit
+SnesWorkRam:0206:Global_Player_CurrentScoreOnesDigit:Player Score Ones Digit
+SnesWorkRam:0207:Global_Player_PointsToGiveThousandsDigit:Points to give Thousands
+SnesWorkRam:0208:Global_Player_PointsToGiveHundredsDigit:Points to give Hundreds
+SnesWorkRam:0209:Global_Player_PointsToGiveTensDigit:Points to give Tens
+SnesWorkRam:020A:Global_Player_PointsToGiveOnesDigit:Points to give Ones
+SnesWorkRam:024B-024C:Exterior_BuildingEntrance:Building entrance
+SnesWorkRam:024D-024E:Exterior_Gate1OpenFlag:Gate 1 (North) open flag
+SnesWorkRam:024F-0250:Exterior_Gate2OpenFlag:Gate 2 (Nest) open
+SnesWorkRam:0251-0252:Exterior_Gate3OpenFlag:Gate 3 (south) open
+SnesWorkRam:0253-0268:Global_Player_CollectedIDCardTable:Table containing all the ID Card and\nSecurity flags
+SnesWorkRam:0269-026A:Interior_CanEnterDarkRoomSafelyFlag:Can enter dark room
+SnesWorkRam:026B-026C:Global_GeneratorIsOnFlagLo:Generator on flag
+SnesWorkRam:026D-026E:Global_MainSystemRestoredFlag:Park rebooted flag
+SnesWorkRam:026F-0270:Global_VisitorCenterSecured:Visitor Center sealed
+SnesWorkRam:0271-0272:Global_ShipObjectivesClearFlag:Ship cleared
+SnesWorkRam:0273-0274:Global_NerveGasDeployedFlag:Nerv gas deployed
+SnesWorkRam:0275-0276:Global_MainlandContactedFlag:Mainland contacted
+SnesWorkRam:0277-0278:Global_BoardHelicopterFlag:Board Helicopter Flag
+SnesWorkRam:0287-0288:Exterior_MotionSensorActiveFlagLo:Motionsensor activated
+SnesWorkRam:0289-028A:Exterior_AllEggsCollectedFlagLo:All eggs collected
+SnesWorkRam:028B-028C:Global_Player_PrimaryWeaponAmmo:Pri weapon ammo count
+SnesWorkRam:028D-028E:Global_Player_PrimaryWeapon:Pri weapon
+SnesWorkRam:0295-0296:Global_Player_SecondaryWeaponAmmo:Sec. weapon ammo 
+SnesWorkRam:0297-0298:Global_Player_SecondaryWeapon:Sec Weapon
+SnesWorkRam:029F-02A0:Global_Payer_CattleProdAmmo
+SnesWorkRam:02A3-02A4:Global_Player_CurrentLifeCount:Life count
+SnesWorkRam:02EB-02EC:Global_Player_DamageTaken
+SnesWorkRam:02EF:Global_MusicSetting
+SnesWorkRam:02F5-02F6:Global_SoundTableIndex
+SnesWorkRam:02FB:Global_SoundTable
+SnesWorkRam:037F-0380:Exterior_CurrentPoleMessage
+SnesWorkRam:0381-0382:TitleScreen_WaitBeforeAutoFadeOut
+SnesWorkRam:0383-0384:TitleScreen_ScreenToFadeOutTo
+SnesWorkRam:038B-038C:Exterior_FadeOutToEndingFlag
+SnesWorkRam:044D-044E:TitleScreen_SelectedStartOrHighScoreMenuOption
+SnesWorkRam:046B-046C:TitleScreen_MenuSizeChangeTimer
+SnesWorkRam:049F:OAMBuffer_000_X
+SnesWorkRam:04A0:OAMBuffer_000_Y
+SnesWorkRam:04A1:OAMBuffer_000_Tile
+SnesWorkRam:04A2:OAMBuffer_000_Prop
+SnesWorkRam:04A3:OAMBuffer_001_X
+SnesWorkRam:04A4:OAMBuffer_001_Y
+SnesWorkRam:04A5:OAMBuffer_001_Tile
+SnesWorkRam:04A6:OAMBuffer_001_Prop
+SnesWorkRam:04A7:OAMBuffer_002_X
+SnesWorkRam:04A8:OAMBuffer_002_Y
+SnesWorkRam:04A9:OAMBuffer_002_Tile
+SnesWorkRam:04AA:OAMBuffer_002_Prop
+SnesWorkRam:04AB:OAMBuffer_003_X
+SnesWorkRam:04AC:OAMBuffer_003_Y
+SnesWorkRam:04AD:OAMBuffer_003_Tile
+SnesWorkRam:04AE:OAMBuffer_003_Prop
+SnesWorkRam:04AF:OAMBuffer_004_X
+SnesWorkRam:04B0:OAMBuffer_004_Y
+SnesWorkRam:04B1:OAMBuffer_004_Tile
+SnesWorkRam:04B2:OAMBuffer_004_Prop
+SnesWorkRam:04B3:OAMBuffer_005_X
+SnesWorkRam:04B4:OAMBuffer_005_Y
+SnesWorkRam:04B5:OAMBuffer_005_Tile
+SnesWorkRam:04B6:OAMBuffer_005_Prop
+SnesWorkRam:04B7:OAMBuffer_006_X
+SnesWorkRam:04B8:OAMBuffer_006_Y
+SnesWorkRam:04B9:OAMBuffer_006_Tile
+SnesWorkRam:04BA:OAMBuffer_006_Prop
+SnesWorkRam:04BB:OAMBuffer_007_X
+SnesWorkRam:04BC:OAMBuffer_007_Y
+SnesWorkRam:04BD:OAMBuffer_007_Tile
+SnesWorkRam:04BE:OAMBuffer_007_Prop
+SnesWorkRam:04BF:OAMBuffer_008_X
+SnesWorkRam:04C0:OAMBuffer_008_Y
+SnesWorkRam:04C1:OAMBuffer_008_Tile
+SnesWorkRam:04C2:OAMBuffer_008_Prop
+SnesWorkRam:04C3:OAMBuffer_009_X
+SnesWorkRam:04C4:OAMBuffer_009_Y
+SnesWorkRam:04C5:OAMBuffer_009_Tile
+SnesWorkRam:04C6:OAMBuffer_009_Prop
+SnesWorkRam:04C7:OAMBuffer_010_X
+SnesWorkRam:04C8:OAMBuffer_010_Y
+SnesWorkRam:04C9:OAMBuffer_010_Tile
+SnesWorkRam:04CA:OAMBuffer_010_Prop
+SnesWorkRam:04CB:OAMBuffer_011_X
+SnesWorkRam:04CC:OAMBuffer_011_Y
+SnesWorkRam:04CD:OAMBuffer_011_Tile
+SnesWorkRam:04CE:OAMBuffer_011_Prop
+SnesWorkRam:04CF:OAMBuffer_012_X
+SnesWorkRam:04D0:OAMBuffer_012_Y
+SnesWorkRam:04D1:OAMBuffer_012_Tile
+SnesWorkRam:04D2:OAMBuffer_012_Prop
+SnesWorkRam:04D3:OAMBuffer_013_X
+SnesWorkRam:04D4:OAMBuffer_013_Y
+SnesWorkRam:04D5:OAMBuffer_013_Tile
+SnesWorkRam:04D6:OAMBuffer_013_Prop
+SnesWorkRam:04D7:OAMBuffer_014_X
+SnesWorkRam:04D8:OAMBuffer_014_Y
+SnesWorkRam:04D9:OAMBuffer_014_Tile
+SnesWorkRam:04DA:OAMBuffer_014_Prop
+SnesWorkRam:04DB:OAMBuffer_015_X
+SnesWorkRam:04DC:OAMBuffer_015_Y
+SnesWorkRam:04DD:OAMBuffer_015_Tile
+SnesWorkRam:04DE:OAMBuffer_015_Prop
+SnesWorkRam:04DF:OAMBuffer_016_X
+SnesWorkRam:04E0:OAMBuffer_016_Y
+SnesWorkRam:04E1:OAMBuffer_016_Tile
+SnesWorkRam:04E2:OAMBuffer_016_Prop
+SnesWorkRam:04E3:OAMBuffer_017_X
+SnesWorkRam:04E4:OAMBuffer_017_Y
+SnesWorkRam:04E5:OAMBuffer_017_Tile
+SnesWorkRam:04E6:OAMBuffer_017_Prop
+SnesWorkRam:04E7:OAMBuffer_018_X
+SnesWorkRam:04E8:OAMBuffer_018_Y
+SnesWorkRam:04E9:OAMBuffer_018_Tile
+SnesWorkRam:04EA:OAMBuffer_018_Prop
+SnesWorkRam:04EB:OAMBuffer_019_X
+SnesWorkRam:04EC:OAMBuffer_019_Y
+SnesWorkRam:04ED:OAMBuffer_019_Tile
+SnesWorkRam:04EE:OAMBuffer_019_Prop
+SnesWorkRam:04EF:OAMBuffer_020_X
+SnesWorkRam:04F0:OAMBuffer_020_Y
+SnesWorkRam:04F1:OAMBuffer_020_Tile
+SnesWorkRam:04F2:OAMBuffer_020_Prop
+SnesWorkRam:04F3:OAMBuffer_021_X
+SnesWorkRam:04F4:OAMBuffer_021_Y
+SnesWorkRam:04F5:OAMBuffer_021_Tile
+SnesWorkRam:04F6:OAMBuffer_021_Prop
+SnesWorkRam:04F7:OAMBuffer_022_X
+SnesWorkRam:04F8:OAMBuffer_022_Y
+SnesWorkRam:04F9:OAMBuffer_022_Tile
+SnesWorkRam:04FA:OAMBuffer_022_Prop
+SnesWorkRam:04FB:OAMBuffer_023_X
+SnesWorkRam:04FC:OAMBuffer_023_Y
+SnesWorkRam:04FD:OAMBuffer_023_Tile
+SnesWorkRam:04FE:OAMBuffer_023_Prop
+SnesWorkRam:04FF:OAMBuffer_024_X
+SnesWorkRam:0500:OAMBuffer_024_Y
+SnesWorkRam:0501:OAMBuffer_024_Tile
+SnesWorkRam:0502:OAMBuffer_024_Prop
+SnesWorkRam:0503:OAMBuffer_025_X
+SnesWorkRam:0504:OAMBuffer_025_Y
+SnesWorkRam:0505:OAMBuffer_025_Tile
+SnesWorkRam:0506:OAMBuffer_025_Prop
+SnesWorkRam:0507:OAMBuffer_026_X
+SnesWorkRam:0508:OAMBuffer_026_Y
+SnesWorkRam:0509:OAMBuffer_026_Tile
+SnesWorkRam:050A:OAMBuffer_026_Prop
+SnesWorkRam:050B:OAMBuffer_027_X
+SnesWorkRam:050C:OAMBuffer_027_Y
+SnesWorkRam:050D:OAMBuffer_027_Tile
+SnesWorkRam:050E:OAMBuffer_027_Prop
+SnesWorkRam:050F:OAMBuffer_028_X
+SnesWorkRam:0510:OAMBuffer_028_Y
+SnesWorkRam:0511:OAMBuffer_028_Tile
+SnesWorkRam:0512:OAMBuffer_028_Prop
+SnesWorkRam:0513:OAMBuffer_029_X
+SnesWorkRam:0514:OAMBuffer_029_Y
+SnesWorkRam:0515:OAMBuffer_029_Tile
+SnesWorkRam:0516:OAMBuffer_029_Prop
+SnesWorkRam:0517:OAMBuffer_030_X
+SnesWorkRam:0518:OAMBuffer_030_Y
+SnesWorkRam:0519:OAMBuffer_030_Tile
+SnesWorkRam:051A:OAMBuffer_030_Prop
+SnesWorkRam:051B:OAMBuffer_031_X
+SnesWorkRam:051C:OAMBuffer_031_Y
+SnesWorkRam:051D:OAMBuffer_031_Tile
+SnesWorkRam:051E:OAMBuffer_031_Prop
+SnesWorkRam:051F:OAMBuffer_032_X
+SnesWorkRam:0520:OAMBuffer_032_Y
+SnesWorkRam:0521:OAMBuffer_032_Tile
+SnesWorkRam:0522:OAMBuffer_032_Prop
+SnesWorkRam:0523:OAMBuffer_033_X
+SnesWorkRam:0524:OAMBuffer_033_Y
+SnesWorkRam:0525:OAMBuffer_033_Tile
+SnesWorkRam:0526:OAMBuffer_033_Prop
+SnesWorkRam:0527:OAMBuffer_034_X
+SnesWorkRam:0528:OAMBuffer_034_Y
+SnesWorkRam:0529:OAMBuffer_034_Tile
+SnesWorkRam:052A:OAMBuffer_034_Prop
+SnesWorkRam:052B:OAMBuffer_035_X
+SnesWorkRam:052C:OAMBuffer_035_Y
+SnesWorkRam:052D:OAMBuffer_035_Tile
+SnesWorkRam:052E:OAMBuffer_035_Prop
+SnesWorkRam:052F:OAMBuffer_036_X
+SnesWorkRam:0530:OAMBuffer_036_Y
+SnesWorkRam:0531:OAMBuffer_036_Tile
+SnesWorkRam:0532:OAMBuffer_036_Prop
+SnesWorkRam:0533:OAMBuffer_037_X
+SnesWorkRam:0534:OAMBuffer_037_Y
+SnesWorkRam:0535:OAMBuffer_037_Tile
+SnesWorkRam:0536:OAMBuffer_037_Prop
+SnesWorkRam:0537:OAMBuffer_038_X
+SnesWorkRam:0538:OAMBuffer_038_Y
+SnesWorkRam:0539:OAMBuffer_038_Tile
+SnesWorkRam:053A:OAMBuffer_038_Prop
+SnesWorkRam:053B:OAMBuffer_039_X
+SnesWorkRam:053C:OAMBuffer_039_Y
+SnesWorkRam:053D:OAMBuffer_039_Tile
+SnesWorkRam:053E:OAMBuffer_039_Prop
+SnesWorkRam:053F:OAMBuffer_040_X
+SnesWorkRam:0540:OAMBuffer_040_Y
+SnesWorkRam:0541:OAMBuffer_040_Tile
+SnesWorkRam:0542:OAMBuffer_040_Prop
+SnesWorkRam:0543:OAMBuffer_041_X
+SnesWorkRam:0544:OAMBuffer_041_Y
+SnesWorkRam:0545:OAMBuffer_041_Tile
+SnesWorkRam:0546:OAMBuffer_041_Prop
+SnesWorkRam:0547:OAMBuffer_042_X
+SnesWorkRam:0548:OAMBuffer_042_Y
+SnesWorkRam:0549:OAMBuffer_042_Tile
+SnesWorkRam:054A:OAMBuffer_042_Prop
+SnesWorkRam:054B:OAMBuffer_043_X
+SnesWorkRam:054C:OAMBuffer_043_Y
+SnesWorkRam:054D:OAMBuffer_043_Tile
+SnesWorkRam:054E:OAMBuffer_043_Prop
+SnesWorkRam:054F:OAMBuffer_044_X
+SnesWorkRam:0550:OAMBuffer_044_Y
+SnesWorkRam:0551:OAMBuffer_044_Tile
+SnesWorkRam:0552:OAMBuffer_044_Prop
+SnesWorkRam:0553:OAMBuffer_045_X
+SnesWorkRam:0554:OAMBuffer_045_Y
+SnesWorkRam:0555:OAMBuffer_045_Tile
+SnesWorkRam:0556:OAMBuffer_045_Prop
+SnesWorkRam:0557:OAMBuffer_046_X
+SnesWorkRam:0558:OAMBuffer_046_Y
+SnesWorkRam:0559:OAMBuffer_046_Tile
+SnesWorkRam:055A:OAMBuffer_046_Prop
+SnesWorkRam:055B:OAMBuffer_047_X
+SnesWorkRam:055C:OAMBuffer_047_Y
+SnesWorkRam:055D:OAMBuffer_047_Tile
+SnesWorkRam:055E:OAMBuffer_047_Prop
+SnesWorkRam:055F:OAMBuffer_048_X
+SnesWorkRam:0560:OAMBuffer_048_Y
+SnesWorkRam:0561:OAMBuffer_048_Tile
+SnesWorkRam:0562:OAMBuffer_048_Prop
+SnesWorkRam:0563:OAMBuffer_049_X
+SnesWorkRam:0564:OAMBuffer_049_Y
+SnesWorkRam:0565:OAMBuffer_049_Tile
+SnesWorkRam:0566:OAMBuffer_049_Prop
+SnesWorkRam:0567:OAMBuffer_050_X
+SnesWorkRam:0568:OAMBuffer_050_Y
+SnesWorkRam:0569:OAMBuffer_050_Tile
+SnesWorkRam:056A:OAMBuffer_050_Prop
+SnesWorkRam:056B:OAMBuffer_051_X
+SnesWorkRam:056C:OAMBuffer_051_Y
+SnesWorkRam:056D:OAMBuffer_051_Tile
+SnesWorkRam:056E:OAMBuffer_051_Prop
+SnesWorkRam:056F:OAMBuffer_052_X
+SnesWorkRam:0570:OAMBuffer_052_Y
+SnesWorkRam:0571:OAMBuffer_052_Tile
+SnesWorkRam:0572:OAMBuffer_052_Prop
+SnesWorkRam:0573:OAMBuffer_053_X
+SnesWorkRam:0574:OAMBuffer_053_Y
+SnesWorkRam:0575:OAMBuffer_053_Tile
+SnesWorkRam:0576:OAMBuffer_053_Prop
+SnesWorkRam:0577:OAMBuffer_054_X
+SnesWorkRam:0578:OAMBuffer_054_Y
+SnesWorkRam:0579:OAMBuffer_054_Tile
+SnesWorkRam:057A:OAMBuffer_054_Prop
+SnesWorkRam:057B:OAMBuffer_055_X
+SnesWorkRam:057C:OAMBuffer_055_Y
+SnesWorkRam:057D:OAMBuffer_055_Tile
+SnesWorkRam:057E:OAMBuffer_055_Prop
+SnesWorkRam:057F:OAMBuffer_056_X
+SnesWorkRam:0580:OAMBuffer_056_Y
+SnesWorkRam:0581:OAMBuffer_056_Tile
+SnesWorkRam:0582:OAMBuffer_056_Prop
+SnesWorkRam:0583:OAMBuffer_057_X
+SnesWorkRam:0584:OAMBuffer_057_Y
+SnesWorkRam:0585:OAMBuffer_057_Tile
+SnesWorkRam:0586:OAMBuffer_057_Prop
+SnesWorkRam:0587:OAMBuffer_058_X
+SnesWorkRam:0588:OAMBuffer_058_Y
+SnesWorkRam:0589:OAMBuffer_058_Tile
+SnesWorkRam:058A:OAMBuffer_058_Prop
+SnesWorkRam:058B:OAMBuffer_059_X
+SnesWorkRam:058C:OAMBuffer_059_Y
+SnesWorkRam:058D:OAMBuffer_059_Tile
+SnesWorkRam:058E:OAMBuffer_059_Prop
+SnesWorkRam:058F:OAMBuffer_060_X
+SnesWorkRam:0590:OAMBuffer_060_Y
+SnesWorkRam:0591:OAMBuffer_060_Tile
+SnesWorkRam:0592:OAMBuffer_060_Prop
+SnesWorkRam:0593:OAMBuffer_061_X
+SnesWorkRam:0594:OAMBuffer_061_Y
+SnesWorkRam:0595:OAMBuffer_061_Tile
+SnesWorkRam:0596:OAMBuffer_061_Prop
+SnesWorkRam:0597:OAMBuffer_062_X
+SnesWorkRam:0598:OAMBuffer_062_Y
+SnesWorkRam:0599:OAMBuffer_062_Tile
+SnesWorkRam:059A:OAMBuffer_062_Prop
+SnesWorkRam:059B:OAMBuffer_063_X
+SnesWorkRam:059C:OAMBuffer_063_Y
+SnesWorkRam:059D:OAMBuffer_063_Tile
+SnesWorkRam:059E:OAMBuffer_063_Prop
+SnesWorkRam:059F:OAMBuffer_064_X
+SnesWorkRam:05A0:OAMBuffer_064_Y
+SnesWorkRam:05A1:OAMBuffer_064_Tile
+SnesWorkRam:05A2:OAMBuffer_064_Prop
+SnesWorkRam:05A3:OAMBuffer_065_X
+SnesWorkRam:05A4:OAMBuffer_065_Y
+SnesWorkRam:05A5:OAMBuffer_065_Tile
+SnesWorkRam:05A6:OAMBuffer_065_Prop
+SnesWorkRam:05A7:OAMBuffer_066_X
+SnesWorkRam:05A8:OAMBuffer_066_Y
+SnesWorkRam:05A9:OAMBuffer_066_Tile
+SnesWorkRam:05AA:OAMBuffer_066_Prop
+SnesWorkRam:05AB:OAMBuffer_067_X
+SnesWorkRam:05AC:OAMBuffer_067_Y
+SnesWorkRam:05AD:OAMBuffer_067_Tile
+SnesWorkRam:05AE:OAMBuffer_067_Prop
+SnesWorkRam:05AF:OAMBuffer_068_X
+SnesWorkRam:05B0:OAMBuffer_068_Y
+SnesWorkRam:05B1:OAMBuffer_068_Tile
+SnesWorkRam:05B2:OAMBuffer_068_Prop
+SnesWorkRam:05B3:OAMBuffer_069_X
+SnesWorkRam:05B4:OAMBuffer_069_Y
+SnesWorkRam:05B5:OAMBuffer_069_Tile
+SnesWorkRam:05B6:OAMBuffer_069_Prop
+SnesWorkRam:05B7:OAMBuffer_070_X
+SnesWorkRam:05B8:OAMBuffer_070_Y
+SnesWorkRam:05B9:OAMBuffer_070_Tile
+SnesWorkRam:05BA:OAMBuffer_070_Prop
+SnesWorkRam:05BB:OAMBuffer_071_X
+SnesWorkRam:05BC:OAMBuffer_071_Y
+SnesWorkRam:05BD:OAMBuffer_071_Tile
+SnesWorkRam:05BE:OAMBuffer_071_Prop
+SnesWorkRam:05BF:OAMBuffer_072_X
+SnesWorkRam:05C0:OAMBuffer_072_Y
+SnesWorkRam:05C1:OAMBuffer_072_Tile
+SnesWorkRam:05C2:OAMBuffer_072_Prop
+SnesWorkRam:05C3:OAMBuffer_073_X
+SnesWorkRam:05C4:OAMBuffer_073_Y
+SnesWorkRam:05C5:OAMBuffer_073_Tile
+SnesWorkRam:05C6:OAMBuffer_073_Prop
+SnesWorkRam:05C7:OAMBuffer_074_X
+SnesWorkRam:05C8:OAMBuffer_074_Y
+SnesWorkRam:05C9:OAMBuffer_074_Tile
+SnesWorkRam:05CA:OAMBuffer_074_Prop
+SnesWorkRam:05CB:OAMBuffer_075_X
+SnesWorkRam:05CC:OAMBuffer_075_Y
+SnesWorkRam:05CD:OAMBuffer_075_Tile
+SnesWorkRam:05CE:OAMBuffer_075_Prop
+SnesWorkRam:05CF:OAMBuffer_076_X
+SnesWorkRam:05D0:OAMBuffer_076_Y
+SnesWorkRam:05D1:OAMBuffer_076_Tile
+SnesWorkRam:05D2:OAMBuffer_076_Prop
+SnesWorkRam:05D3:OAMBuffer_077_X
+SnesWorkRam:05D4:OAMBuffer_077_Y
+SnesWorkRam:05D5:OAMBuffer_077_Tile
+SnesWorkRam:05D6:OAMBuffer_077_Prop
+SnesWorkRam:05D7:OAMBuffer_078_X
+SnesWorkRam:05D8:OAMBuffer_078_Y
+SnesWorkRam:05D9:OAMBuffer_078_Tile
+SnesWorkRam:05DA:OAMBuffer_078_Prop
+SnesWorkRam:05DB:OAMBuffer_079_X
+SnesWorkRam:05DC:OAMBuffer_079_Y
+SnesWorkRam:05DD:OAMBuffer_079_Tile
+SnesWorkRam:05DE:OAMBuffer_079_Prop
+SnesWorkRam:05DF:OAMBuffer_080_X
+SnesWorkRam:05E0:OAMBuffer_080_Y
+SnesWorkRam:05E1:OAMBuffer_080_Tile
+SnesWorkRam:05E2:OAMBuffer_080_Prop
+SnesWorkRam:05E3:OAMBuffer_081_X
+SnesWorkRam:05E4:OAMBuffer_081_Y
+SnesWorkRam:05E5:OAMBuffer_081_Tile
+SnesWorkRam:05E6:OAMBuffer_081_Prop
+SnesWorkRam:05E7:OAMBuffer_082_X
+SnesWorkRam:05E8:OAMBuffer_082_Y
+SnesWorkRam:05E9:OAMBuffer_082_Tile
+SnesWorkRam:05EA:OAMBuffer_082_Prop
+SnesWorkRam:05EB:OAMBuffer_083_X
+SnesWorkRam:05EC:OAMBuffer_083_Y
+SnesWorkRam:05ED:OAMBuffer_083_Tile
+SnesWorkRam:05EE:OAMBuffer_083_Prop
+SnesWorkRam:05EF:OAMBuffer_084_X
+SnesWorkRam:05F0:OAMBuffer_084_Y
+SnesWorkRam:05F1:OAMBuffer_084_Tile
+SnesWorkRam:05F2:OAMBuffer_084_Prop
+SnesWorkRam:05F3:OAMBuffer_085_X
+SnesWorkRam:05F4:OAMBuffer_085_Y
+SnesWorkRam:05F5:OAMBuffer_085_Tile
+SnesWorkRam:05F6:OAMBuffer_085_Prop
+SnesWorkRam:05F7:OAMBuffer_086_X
+SnesWorkRam:05F8:OAMBuffer_086_Y
+SnesWorkRam:05F9:OAMBuffer_086_Tile
+SnesWorkRam:05FA:OAMBuffer_086_Prop
+SnesWorkRam:05FB:OAMBuffer_087_X
+SnesWorkRam:05FC:OAMBuffer_087_Y
+SnesWorkRam:05FD:OAMBuffer_087_Tile
+SnesWorkRam:05FE:OAMBuffer_087_Prop
+SnesWorkRam:05FF:OAMBuffer_088_X
+SnesWorkRam:0600:OAMBuffer_088_Y
+SnesWorkRam:0601:OAMBuffer_088_Tile
+SnesWorkRam:0602:OAMBuffer_088_Prop
+SnesWorkRam:0603:OAMBuffer_089_X
+SnesWorkRam:0604:OAMBuffer_089_Y
+SnesWorkRam:0605:OAMBuffer_089_Tile
+SnesWorkRam:0606:OAMBuffer_089_Prop
+SnesWorkRam:0607:OAMBuffer_090_X
+SnesWorkRam:0608:OAMBuffer_090_Y
+SnesWorkRam:0609:OAMBuffer_090_Tile
+SnesWorkRam:060A:OAMBuffer_090_Prop
+SnesWorkRam:060B:OAMBuffer_091_X
+SnesWorkRam:060C:OAMBuffer_091_Y
+SnesWorkRam:060D:OAMBuffer_091_Tile
+SnesWorkRam:060E:OAMBuffer_091_Prop
+SnesWorkRam:060F:OAMBuffer_092_X
+SnesWorkRam:0610:OAMBuffer_092_Y
+SnesWorkRam:0611:OAMBuffer_092_Tile
+SnesWorkRam:0612:OAMBuffer_092_Prop
+SnesWorkRam:0613:OAMBuffer_093_X
+SnesWorkRam:0614:OAMBuffer_093_Y
+SnesWorkRam:0615:OAMBuffer_093_Tile
+SnesWorkRam:0616:OAMBuffer_093_Prop
+SnesWorkRam:0617:OAMBuffer_094_X
+SnesWorkRam:0618:OAMBuffer_094_Y
+SnesWorkRam:0619:OAMBuffer_094_Tile
+SnesWorkRam:061A:OAMBuffer_094_Prop
+SnesWorkRam:061B:OAMBuffer_095_X
+SnesWorkRam:061C:OAMBuffer_095_Y
+SnesWorkRam:061D:OAMBuffer_095_Tile
+SnesWorkRam:061E:OAMBuffer_095_Prop
+SnesWorkRam:061F:OAMBuffer_096_X
+SnesWorkRam:0620:OAMBuffer_096_Y
+SnesWorkRam:0621:OAMBuffer_096_Tile
+SnesWorkRam:0622:OAMBuffer_096_Prop
+SnesWorkRam:0623:OAMBuffer_097_X
+SnesWorkRam:0624:OAMBuffer_097_Y
+SnesWorkRam:0625:OAMBuffer_097_Tile
+SnesWorkRam:0626:OAMBuffer_097_Prop
+SnesWorkRam:0627:OAMBuffer_098_X
+SnesWorkRam:0628:OAMBuffer_098_Y
+SnesWorkRam:0629:OAMBuffer_098_Tile
+SnesWorkRam:062A:OAMBuffer_098_Prop
+SnesWorkRam:062B:OAMBuffer_099_X
+SnesWorkRam:062C:OAMBuffer_099_Y
+SnesWorkRam:062D:OAMBuffer_099_Tile
+SnesWorkRam:062E:OAMBuffer_099_Prop
+SnesWorkRam:062F:OAMBuffer_100_X
+SnesWorkRam:0630:OAMBuffer_100_Y
+SnesWorkRam:0631:OAMBuffer_100_Tile
+SnesWorkRam:0632:OAMBuffer_100_Prop
+SnesWorkRam:0633:OAMBuffer_101_X
+SnesWorkRam:0634:OAMBuffer_101_Y
+SnesWorkRam:0635:OAMBuffer_101_Tile
+SnesWorkRam:0636:OAMBuffer_101_Prop
+SnesWorkRam:0637:OAMBuffer_102_X
+SnesWorkRam:0638:OAMBuffer_102_Y
+SnesWorkRam:0639:OAMBuffer_102_Tile
+SnesWorkRam:063A:OAMBuffer_102_Prop
+SnesWorkRam:063B:OAMBuffer_103_X
+SnesWorkRam:063C:OAMBuffer_103_Y
+SnesWorkRam:063D:OAMBuffer_103_Tile
+SnesWorkRam:063E:OAMBuffer_103_Prop
+SnesWorkRam:063F:OAMBuffer_104_X
+SnesWorkRam:0640:OAMBuffer_104_Y
+SnesWorkRam:0641:OAMBuffer_104_Tile
+SnesWorkRam:0642:OAMBuffer_104_Prop
+SnesWorkRam:0643:OAMBuffer_105_X
+SnesWorkRam:0644:OAMBuffer_105_Y
+SnesWorkRam:0645:OAMBuffer_105_Tile
+SnesWorkRam:0646:OAMBuffer_105_Prop
+SnesWorkRam:0647:OAMBuffer_106_X
+SnesWorkRam:0648:OAMBuffer_106_Y
+SnesWorkRam:0649:OAMBuffer_106_Tile
+SnesWorkRam:064A:OAMBuffer_106_Prop
+SnesWorkRam:064B:OAMBuffer_107_X
+SnesWorkRam:064C:OAMBuffer_107_Y
+SnesWorkRam:064D:OAMBuffer_107_Tile
+SnesWorkRam:064E:OAMBuffer_107_Prop
+SnesWorkRam:064F:OAMBuffer_108_X
+SnesWorkRam:0650:OAMBuffer_108_Y
+SnesWorkRam:0651:OAMBuffer_108_Tile
+SnesWorkRam:0652:OAMBuffer_108_Prop
+SnesWorkRam:0653:OAMBuffer_109_X
+SnesWorkRam:0654:OAMBuffer_109_Y
+SnesWorkRam:0655:OAMBuffer_109_Tile
+SnesWorkRam:0656:OAMBuffer_109_Prop
+SnesWorkRam:0657:OAMBuffer_110_X
+SnesWorkRam:0658:OAMBuffer_110_Y
+SnesWorkRam:0659:OAMBuffer_110_Tile
+SnesWorkRam:065A:OAMBuffer_110_Prop
+SnesWorkRam:065B:OAMBuffer_111_X
+SnesWorkRam:065C:OAMBuffer_111_Y
+SnesWorkRam:065D:OAMBuffer_111_Tile
+SnesWorkRam:065E:OAMBuffer_111_Prop
+SnesWorkRam:065F:OAMBuffer_112_X
+SnesWorkRam:0660:OAMBuffer_112_Y
+SnesWorkRam:0661:OAMBuffer_112_Tile
+SnesWorkRam:0662:OAMBuffer_112_Prop
+SnesWorkRam:0663:OAMBuffer_113_X
+SnesWorkRam:0664:OAMBuffer_113_Y
+SnesWorkRam:0665:OAMBuffer_113_Tile
+SnesWorkRam:0666:OAMBuffer_113_Prop
+SnesWorkRam:0667:OAMBuffer_114_X
+SnesWorkRam:0668:OAMBuffer_114_Y
+SnesWorkRam:0669:OAMBuffer_114_Tile
+SnesWorkRam:066A:OAMBuffer_114_Prop
+SnesWorkRam:066B:OAMBuffer_115_X
+SnesWorkRam:066C:OAMBuffer_115_Y
+SnesWorkRam:066D:OAMBuffer_115_Tile
+SnesWorkRam:066E:OAMBuffer_115_Prop
+SnesWorkRam:066F:OAMBuffer_116_X
+SnesWorkRam:0670:OAMBuffer_116_Y
+SnesWorkRam:0671:OAMBuffer_116_Tile
+SnesWorkRam:0672:OAMBuffer_116_Prop
+SnesWorkRam:0673:OAMBuffer_117_X
+SnesWorkRam:0674:OAMBuffer_117_Y
+SnesWorkRam:0675:OAMBuffer_117_Tile
+SnesWorkRam:0676:OAMBuffer_117_Prop
+SnesWorkRam:0677:OAMBuffer_118_X
+SnesWorkRam:0678:OAMBuffer_118_Y
+SnesWorkRam:0679:OAMBuffer_118_Tile
+SnesWorkRam:067A:OAMBuffer_118_Prop
+SnesWorkRam:067B:OAMBuffer_119_X
+SnesWorkRam:067C:OAMBuffer_119_Y
+SnesWorkRam:067D:OAMBuffer_119_Tile
+SnesWorkRam:067E:OAMBuffer_119_Prop
+SnesWorkRam:067F:OAMBuffer_120_X
+SnesWorkRam:0680:OAMBuffer_120_Y
+SnesWorkRam:0681:OAMBuffer_120_Tile
+SnesWorkRam:0682:OAMBuffer_120_Prop
+SnesWorkRam:0683:OAMBuffer_121_X
+SnesWorkRam:0684:OAMBuffer_121_Y
+SnesWorkRam:0685:OAMBuffer_121_Tile
+SnesWorkRam:0686:OAMBuffer_121_Prop
+SnesWorkRam:0687:OAMBuffer_122_X
+SnesWorkRam:0688:OAMBuffer_122_Y
+SnesWorkRam:0689:OAMBuffer_122_Tile
+SnesWorkRam:068A:OAMBuffer_122_Prop
+SnesWorkRam:068B:OAMBuffer_123_X
+SnesWorkRam:068C:OAMBuffer_123_Y
+SnesWorkRam:068D:OAMBuffer_123_Tile
+SnesWorkRam:068E:OAMBuffer_123_Prop
+SnesWorkRam:068F:OAMBuffer_124_X
+SnesWorkRam:0690:OAMBuffer_124_Y
+SnesWorkRam:0691:OAMBuffer_124_Tile
+SnesWorkRam:0692:OAMBuffer_124_Prop
+SnesWorkRam:0693:OAMBuffer_125_X
+SnesWorkRam:0694:OAMBuffer_125_Y
+SnesWorkRam:0695:OAMBuffer_125_Tile
+SnesWorkRam:0696:OAMBuffer_125_Prop
+SnesWorkRam:0697:OAMBuffer_126_X
+SnesWorkRam:0698:OAMBuffer_126_Y
+SnesWorkRam:0699:OAMBuffer_126_Tile
+SnesWorkRam:069A:OAMBuffer_126_Prop
+SnesWorkRam:069B:OAMBuffer_127_X
+SnesWorkRam:069C:OAMBuffer_127_Y
+SnesWorkRam:069D:OAMBuffer_127_Tile
+SnesWorkRam:069E:OAMBuffer_127_Prop
+SnesWorkRam:0B21-0B22:Exterior_Player_MovementDirection
+SnesWorkRam:0DEB-0DEC:Exterior_Player_WalkingFrame
+SnesWorkRam:0DED-0DEE:Exterior_Player_InAirFlag
+SnesWorkRam:0DEF-0DF0:Exterior_Player_OnStairsFlag
+SnesWorkRam:0DFF-0E00:Exterior_TouchedPoleFlag
+SnesWorkRam:0E0F-0E10:Global_Player_RemainingEggsToCollect
+SnesWorkRam:0E11-0E12:Global_Player_PickedUpEggFlag
+SnesWorkRam:0E2D-0E2E:Exterior_Player_CanPickUpItemFlag
+SnesWorkRam:0E33-0E34:Exterior_Player_CheckpointZPos
+SnesWorkRam:0E35-0E36:Exterior_Player_CheckpointXPos
+SnesWorkRam:0E37-0E38:Exterior_Player_CheckpointYPos
+SnesWorkRam:0E3D-0E3E:Exterior_WaitBeforeMrDNATriviaAppears
+SnesWorkRam:0E3F-0E40:Exterior_MrDNATriviaTilemapIndex
+SnesWorkRam:0E4C-0E4D:Exterior_Player_UseDemoMovementsFlag
+SnesWorkRam:1400:Interior_OAMBuffer
+SnesWorkRam:169A-169B:Interior_MapWidth
+SnesWorkRam:169C-169D:Interior_MapLength
+SnesWorkRam:16B5-16B6:Interior_CurrentArea
+SnesWorkRam:16B7-16B8:EntityLoadStatusBuildingIndex
+SnesWorkRam:16B9-16BA:Interior_DinosaursOnFloorCount
+SnesWorkRam:16C6-16C7:Interior_ElevatorMusicToUse
+SnesWorkRam:179D-179E:Interior_UseNightVisionFlag
+SnesWorkRam:1807-1808:Interior_BufferedDinosaursOnFloorMessageData
+SnesWorkRam:1843:Interior_ComputerTerminalID
+SnesWorkRam:1895:Interior_ComputerTerminalMessageIndex
+SnesWorkRam:1AA4:Interior_EntityLoadStatusTable
+SnesWorkRam:1DE4:Global_Player_CollectedBatteryTable
+SnesWorkRam:1DEF-1DF0:Interior_CollectedNerveGasFlag
+SnesWorkRam:1DF1-1DF2:Interior_EntityLoadStatusByteIndex
+SnesWorkRam:1DF3-1DF4:Interior_EntityLoadStatusBitIndex
+SnesWorkRam:1DF5-1DF6:Interior_ShipContactedFlag
+SnesWorkRam:1DF7-1DF8:Interior_ShipFreeOfDinosFlag
+SnesWorkRam:1DF9:Interior_DinosaursOnFloorTable
+SnesWorkRam:1E14:Interior_KilledAllDinosaursOnFloorFlagTable
+SnesWorkRam:2000:Global_HighScoreScreenOAMData
+SnesWorkRam:2090-2091:Exterior_Sprites_XPos
+SnesWorkRam:2476-2477:Exterior_Player_XPos
+SnesWorkRam:247A-247B:Exterior_Sprites_SubXPos
+SnesWorkRam:2860-2861:Exterior_Player_SubXPos
+SnesWorkRam:2864-2865:Exterior_Sprites_YPos
+SnesWorkRam:2C4E-2C4F:Exterior_Sprites_SubYPos
+SnesWorkRam:3034-3035:Exterior_Player_SubYPos
+SnesWorkRam:3038-3039:Exterior_Sprites_ID
+SnesWorkRam:3422:Exterior_Sprites_AnimationFrame
+SnesWorkRam:3808-3809:Exterior_Player_AnimationFrame
+SnesWorkRam:4F88-4F89:Exterior_Sprites_ZPos
+SnesWorkRam:536E-536F:Exterior_Player_ZPos
+SnesRegister:2100:INIDISP:Screen Display Register
+SnesRegister:2101:OBSEL:Object Size and Character Size Register
+SnesRegister:2102:OAMADDL:OAM Address Registers (Low)
+SnesRegister:2103:OAMADDH:OAM Address Registers (High)
+SnesRegister:2104:OAMDATA:OAM Data Write Register
+SnesRegister:2105:BGMODE:BG Mode and Character Size Register
+SnesRegister:2106:MOSAIC:Mosaic Register
+SnesRegister:2107:BG1SC:BG Tilemap Address Registers (BG1)
+SnesRegister:2108:BG2SC:BG Tilemap Address Registers (BG2)
+SnesRegister:2109:BG3SC:BG Tilemap Address Registers (BG3)
+SnesRegister:210A:BG4SC:BG Tilemap Address Registers (BG4)
+SnesRegister:210B:BG12NBA:BG Character Address Registers (BG1&2)
+SnesRegister:210C:BG34NBA:BG Character Address Registers (BG3&4)
+SnesRegister:210D:BG1HOFS:BG Scroll Registers (BG1)
+SnesRegister:210E:BG1VOFS:BG Scroll Registers (BG1)
+SnesRegister:210F:BG2HOFS:BG Scroll Registers (BG2)
+SnesRegister:2110:BG2VOFS:BG Scroll Registers (BG2)
+SnesRegister:2111:BG3HOFS:BG Scroll Registers (BG3)
+SnesRegister:2112:BG3VOFS:BG Scroll Registers (BG3)
+SnesRegister:2113:BG4HOFS:BG Scroll Registers (BG4)
+SnesRegister:2114:BG4VOFS:BG Scroll Registers (BG4)
+SnesRegister:2115:VMAIN:Video Port Control Register
+SnesRegister:2116:VMADDL:VRAM Address Registers (Low)
+SnesRegister:2117:VMADDH:VRAM Address Registers (High)
+SnesRegister:2118:VMDATAL:VRAM Data Write Registers (Low)
+SnesRegister:2119:VMDATAH:VRAM Data Write Registers (High)
+SnesRegister:211A:M7SEL:Mode 7 Settings Register
+SnesRegister:211B:M7A:Mode 7 Matrix Registers
+SnesRegister:211C:M7B:Mode 7 Matrix Registers
+SnesRegister:211D:M7C:Mode 7 Matrix Registers
+SnesRegister:211E:M7D:Mode 7 Matrix Registers
+SnesRegister:211F:M7X:Mode 7 Matrix Registers
+SnesRegister:2120:M7Y:Mode 7 Matrix Registers
+SnesRegister:2121:CGADD:CGRAM Address Register
+SnesRegister:2122:CGDATA:CGRAM Data Write Register
+SnesRegister:2123:W12SEL:Window Mask Settings Registers
+SnesRegister:2124:W34SEL:Window Mask Settings Registers
+SnesRegister:2125:WOBJSEL:Window Mask Settings Registers
+SnesRegister:2126:WH0:Window Position Registers (WH0)
+SnesRegister:2127:WH1:Window Position Registers (WH1)
+SnesRegister:2128:WH2:Window Position Registers (WH2)
+SnesRegister:2129:WH3:Window Position Registers (WH3)
+SnesRegister:212A:WBGLOG:Window Mask Logic registers (BG)
+SnesRegister:212B:WOBJLOG:Window Mask Logic registers (OBJ)
+SnesRegister:212C:TM:Screen Destination Registers
+SnesRegister:212D:TS:Screen Destination Registers
+SnesRegister:212E:TMW:Window Mask Destination Registers
+SnesRegister:212F:TSW:Window Mask Destination Registers
+SnesRegister:2130:CGWSEL:Color Math Registers
+SnesRegister:2131:CGADSUB:Color Math Registers
+SnesRegister:2132:COLDATA:Color Math Registers
+SnesRegister:2133:SETINI:Screen Mode Select Register
+SnesRegister:2134:MPYL:Multiplication Result Registers
+SnesRegister:2135:MPYM:Multiplication Result Registers
+SnesRegister:2136:MPYH:Multiplication Result Registers
+SnesRegister:2137:SLHV:Software Latch Register
+SnesRegister:2138:OAMDATAREAD:OAM Data Read Register
+SnesRegister:2139:VMDATALREAD:VRAM Data Read Register (Low)
+SnesRegister:213A:VMDATAHREAD:VRAM Data Read Register (High)
+SnesRegister:213B:CGDATAREAD:CGRAM Data Read Register
+SnesRegister:213C:OPHCT:Scanline Location Registers (Horizontal)
+SnesRegister:213D:OPVCT:Scanline Location Registers (Vertical)
+SnesRegister:213E:STAT77:PPU Status Register
+SnesRegister:213F:STAT78:PPU Status Register
+SnesRegister:2140:APUIO0:APU IO Registers
+SnesRegister:2141:APUIO1:APU IO Registers
+SnesRegister:2142:APUIO2:APU IO Registers
+SnesRegister:2143:APUIO3:APU IO Registers
+SnesRegister:2180:WMDATA:WRAM Data Register
+SnesRegister:2181:WMADDL:WRAM Address Registers
+SnesRegister:2182:WMADDM:WRAM Address Registers
+SnesRegister:2183:WMADDH:WRAM Address Registers
+SnesRegister:4016:JOYSER0:Old Style Joypad Registers
+SnesRegister:4017:JOYSER1:Old Style Joypad Registers
+SnesRegister:4200:NMITIMEN:Interrupt Enable Register
+SnesRegister:4201:WRIO:IO Port Write Register
+SnesRegister:4202:WRMPYA:Multiplicand Registers
+SnesRegister:4203:WRMPYB:Multiplicand Registers
+SnesRegister:4204:WRDIVL:Divisor & Dividend Registers
+SnesRegister:4205:WRDIVH:Divisor & Dividend Registers
+SnesRegister:4206:WRDIVB:Divisor & Dividend Registers
+SnesRegister:4207:HTIMEL:IRQ Timer Registers (Horizontal - Low)
+SnesRegister:4208:HTIMEH:IRQ Timer Registers (Horizontal - High)
+SnesRegister:4209:VTIMEL:IRQ Timer Registers (Vertical - Low)
+SnesRegister:420A:VTIMEH:IRQ Timer Registers (Vertical - High)
+SnesRegister:420B:MDMAEN:DMA Enable Register
+SnesRegister:420C:HDMAEN:HDMA Enable Register
+SnesRegister:420D:MEMSEL:ROM Speed Register
+SnesRegister:4210:RDNMI:Interrupt Flag Registers
+SnesRegister:4211:TIMEUP:Interrupt Flag Registers
+SnesRegister:4212:HVBJOY:PPU Status Register
+SnesRegister:4213:RDIO:IO Port Read Register
+SnesRegister:4214:RDDIVL:Multiplication Or Divide Result Registers (Low)
+SnesRegister:4215:RDDIVH:Multiplication Or Divide Result Registers (High)
+SnesRegister:4216:RDMPYL:Multiplication Or Divide Result Registers (Low)
+SnesRegister:4217:RDMPYH:Multiplication Or Divide Result Registers (High)
+SnesRegister:4218:JOY1L:Controller Port Data Registers (Pad 1 - Low)
+SnesRegister:4219:JOY1H:Controller Port Data Registers (Pad 1 - High)
+SnesRegister:421A:JOY2L:Controller Port Data Registers (Pad 2 - Low)
+SnesRegister:421B:JOY2H:Controller Port Data Registers (Pad 2 - High)
+SnesRegister:421C:JOY3L:Controller Port Data Registers (Pad 3 - Low)
+SnesRegister:421D:JOY3H:Controller Port Data Registers (Pad 3 - High)
+SnesRegister:421E:JOY4L:Controller Port Data Registers (Pad 4 - Low)
+SnesRegister:421F:JOY4H:Controller Port Data Registers (Pad 4 - High)
+SnesRegister:4300:DMAP0:(H)DMA Control
+SnesRegister:4301:BBAD0:(H)DMA B-Bus Address
+SnesRegister:4302:A1T0L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4303:A1T0H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4304:A1B0:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4305:DAS0L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4306:DAS0H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4307:DAS0B:HDMA Indirect Address (Bank)
+SnesRegister:4308:A2A0L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4309:A2A0H:HDMA Mid Frame Table Address (High)
+SnesRegister:430A:NTLR0:HDMA Line Counter
+SnesRegister:4310:DMAP1:(H)DMA Control
+SnesRegister:4311:BBAD1:(H)DMA B-Bus Address
+SnesRegister:4312:A1T1L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4313:A1T1H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4314:A1B1:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4315:DAS1L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4316:DAS1H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4317:DAS1B:HDMA Indirect Address (Bank)
+SnesRegister:4318:A2A1L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4319:A2A1H:HDMA Mid Frame Table Address (High)
+SnesRegister:431A:NTLR1:HDMA Line Counter
+SnesRegister:4320:DMAP2:(H)DMA Control
+SnesRegister:4321:BBAD2:(H)DMA B-Bus Address
+SnesRegister:4322:A1T2L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4323:A1T2H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4324:A1B2:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4325:DAS2L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4326:DAS2H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4327:DAS2B:HDMA Indirect Address (Bank)
+SnesRegister:4328:A2A2L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4329:A2A2H:HDMA Mid Frame Table Address (High)
+SnesRegister:432A:NTLR2:HDMA Line Counter
+SnesRegister:4330:DMAP3:(H)DMA Control
+SnesRegister:4331:BBAD3:(H)DMA B-Bus Address
+SnesRegister:4332:A1T3L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4333:A1T3H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4334:A1B3:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4335:DAS3L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4336:DAS3H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4337:DAS3B:HDMA Indirect Address (Bank)
+SnesRegister:4338:A2A3L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4339:A2A3H:HDMA Mid Frame Table Address (High)
+SnesRegister:433A:NTLR3:HDMA Line Counter
+SnesRegister:4340:DMAP4:(H)DMA Control
+SnesRegister:4341:BBAD4:(H)DMA B-Bus Address
+SnesRegister:4342:A1T4L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4343:A1T4H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4344:A1B4:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4345:DAS4L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4346:DAS4H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4347:DAS4B:HDMA Indirect Address (Bank)
+SnesRegister:4348:A2A4L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4349:A2A4H:HDMA Mid Frame Table Address (High)
+SnesRegister:434A:NTLR4:HDMA Line Counter
+SnesRegister:4350:DMAP5:(H)DMA Control
+SnesRegister:4351:BBAD5:(H)DMA B-Bus Address
+SnesRegister:4352:A1T5L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4353:A1T5H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4354:A1B5:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4355:DAS5L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4356:DAS5H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4357:DAS5B:HDMA Indirect Address (Bank)
+SnesRegister:4358:A2A5L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4359:A2A5H:HDMA Mid Frame Table Address (High)
+SnesRegister:435A:NTLR5:HDMA Line Counter
+SnesRegister:4360:DMAP6:(H)DMA Control
+SnesRegister:4361:BBAD6:(H)DMA B-Bus Address
+SnesRegister:4362:A1T6L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4363:A1T6H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4364:A1B6:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4365:DAS6L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4366:DAS6H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4367:DAS6B:HDMA Indirect Address (Bank)
+SnesRegister:4368:A2A6L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4369:A2A6H:HDMA Mid Frame Table Address (High)
+SnesRegister:436A:NTLR6:HDMA Line Counter
+SnesRegister:4370:DMAP7:(H)DMA Control
+SnesRegister:4371:BBAD7:(H)DMA B-Bus Address
+SnesRegister:4372:A1T7L:DMA A-Bus Address / HDMA Table Address (Low)
+SnesRegister:4373:A1T7H:DMA A-Bus Address / HDMA Table Address (High)
+SnesRegister:4374:A1B7:DMA A-Bus Address / HDMA Table Address (Bank)
+SnesRegister:4375:DAS7L:DMA Size / HDMA Indirect Address (Low)
+SnesRegister:4376:DAS7H:DMA Size / HDMA Indirect Address (High)
+SnesRegister:4377:DAS7B:HDMA Indirect Address (Bank)
+SnesRegister:4378:A2A7L:HDMA Mid Frame Table Address (Low)
+SnesRegister:4379:A2A7H:HDMA Mid Frame Table Address (High)
+SnesRegister:437A:NTLR7:HDMA Line Counter
+SpcRam:00F0:TEST:Testing functions
+SpcRam:00F1:CONTROL:I/O and Timer Control
+SpcRam:00F2:DSPADDR:DSP Address
+SpcRam:00F3:DSPDATA:DSP Data
+SpcRam:00F4:CPUIO0:CPU I/O 0
+SpcRam:00F5:CPUIO1:CPU I/O 1
+SpcRam:00F6:CPUIO2:CPU I/O 2
+SpcRam:00F7:CPUIO3:CPU I/O 3
+SpcRam:00F8:RAMREG1:Memory Register 1
+SpcRam:00F9:RAMREG2:Memory Register 2
+SpcRam:00FA:T0TARGET:Timer 0 scaling target
+SpcRam:00FB:T1TARGET:Timer 1 scaling target
+SpcRam:00FC:T2TARGET:Timer 2 scaling target
+SpcRam:00FD:T0OUT:Timer 0 output
+SpcRam:00FE:T1OUT:Timer 1 output
+SpcRam:00FF:T2OUT:Timer 2 output

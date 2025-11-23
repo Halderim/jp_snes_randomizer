@@ -3,3 +3,7 @@ internal/rom/modified/*.sfc
 internal/uncompressed/*.bin
 internal/logs/*.log
 internal/modbin/*
+internal/logic/*
+asar/*
+cmd/web/*
+cmd/creditstext/*
