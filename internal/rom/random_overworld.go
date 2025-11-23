@@ -178,7 +178,6 @@ func loadOverworldItems(rom []byte) ([]owItem, error) {
 			DecodedX: decodeX(xy),
 			DecodedY: decodeY(xy),
 		}
-		fmt.Println(item)
 		items = append(items, item)
 		offset += OWRecordSize
 		index++

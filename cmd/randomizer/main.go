@@ -20,6 +20,7 @@ func main() {
 	seed := flag.Int64("seed", 0, "Randomizer seed (0 = use current time)")
 	start := flag.Bool("start", false, "Apply random start location")
 	difficulty := flag.Int64("difficulty", 0, "Set game difficulty")
+	overworld := flag.Bool("overworld", true, "Disable overworld randomization")
 	flag.Parse()
 
 	finalSeed := *seed
@@ -112,9 +113,13 @@ func main() {
 		log.Fatal("❌ Pointer patching failed:", err)
 	}
 
-	fmt.Println("🔗 random overworld items...")
-	if err := rom.RandomizeOverworldItems(expandedRom, finalSeed, logPath); err != nil {
-		log.Fatal("❌ Applying random overworld items failed:", err)
+	if *overworld {
+		fmt.Println("🔗 random overworld items...")
+		if err := rom.RandomizeOverworldItems(expandedRom, finalSeed, logPath); err != nil {
+			log.Fatal("❌ Applying random overworld items failed:", err)
+		}
+	} else {
+		fmt.Println("ℹ️  Skipping random overworld items.")
 	}
 
 	if *start {
