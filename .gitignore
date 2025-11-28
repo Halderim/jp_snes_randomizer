@@ -5,5 +5,4 @@ internal/logs/*.log
 internal/modbin/*
 internal/logic/*
 asar/*
-cmd/web/*
 cmd/creditstext/*
