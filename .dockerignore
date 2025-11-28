@@ -1,0 +1,44 @@
+# Git
+.git
+.gitignore
+
+# Docker
+docker-compose.yml
+Dockerfile*
+.dockerignore
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Laravel
+laravel/vendor
+laravel/node_modules
+laravel/.env
+laravel/storage/logs/*
+laravel/storage/framework/cache/*
+laravel/storage/framework/sessions/*
+laravel/storage/framework/views/*
+laravel/bootstrap/cache/*
+
+# Go
+*.exe
+*.test
+*.out
+
+# Build artifacts
+internal/modbin/*
+internal/logs/*
+internal/rom/modified/*
+
+# Documentation
+*.md
+!README.md
+

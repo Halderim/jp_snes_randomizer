@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # Go Randomizer API
+  randomizer-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.go
+    container_name: jp_randomizer_api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./internal:/app/internal
+    environment:
+      - PORT=8080
+    networks:
+      - randomizer-network
+    restart: unless-stopped
+
+  # Laravel Frontend
+  laravel:
+    build:
+      context: .
+      dockerfile: Dockerfile.laravel
+    container_name: jp_randomizer_laravel
+    ports:
+      - "8000:80"
+    volumes:
+      - ./laravel:/var/www/html
+      - ./laravel/storage:/var/www/html/storage
+      - ./laravel/bootstrap/cache:/var/www/html/bootstrap/cache
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - RANDOMIZER_API_URL=http://randomizer-api:8080
+      - DB_CONNECTION=sqlite
+    depends_on:
+      - randomizer-api
+    networks:
+      - randomizer-network
+    restart: unless-stopped
+
+networks:
+  randomizer-network:
+    driver: bridge
+

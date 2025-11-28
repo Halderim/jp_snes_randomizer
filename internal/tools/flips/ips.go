@@ -30,7 +30,9 @@ func PatchIPS(ipsPath, romPath string, outPath string, logPath string) error {
 	cmd.Stderr = os.Stderr
 
 	if err := cmd.Run(); err != nil {
-		return fmt.Errorf("flips failed for %s: %w", romPath, err)
+		logFile.WriteString(fmt.Sprintf("\n===== flips failed for %s: %s =====\n", romPath, err))	
+		return fmt.Errorf("flips failed for %s: %s", romPath, err)
 	}
+	logFile.WriteString(fmt.Sprintf("\n===== flips successful for %s =====\n", romPath))
 	return nil
 }
