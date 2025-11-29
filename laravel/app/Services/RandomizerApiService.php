@@ -51,14 +51,10 @@ class RandomizerApiService
         } catch (GuzzleException $e) {
             Log::error('ROM-Upload fehlgeschlagen', [
                 'error' => $e->getMessage(),
-                'response' => $e->hasResponse() ? $e->getResponse()->getBody()->getContents() : null,
+                'response' => "",
             ]);
 
             $message = 'Fehler beim Upload der ROM-Datei';
-            if ($e->hasResponse()) {
-                $responseBody = $e->getResponse()->getBody()->getContents();
-                $message = $responseBody ?: $message;
-            }
 
             throw new \Exception($message, 0, $e);
         }
@@ -92,14 +88,11 @@ class RandomizerApiService
             Log::error('Randomisierung fehlgeschlagen', [
                 'error' => $e->getMessage(),
                 'settings' => $settings,
-                'response' => $e->hasResponse() ? $e->getResponse()->getBody()->getContents() : null,
+                'response' => "",
             ]);
 
             $message = 'Fehler bei der Randomisierung';
-            if ($e->hasResponse()) {
-                $responseBody = $e->getResponse()->getBody()->getContents();
-                $message = $responseBody ?: $message;
-            }
+            
 
             throw new \Exception($message, 0, $e);
         }

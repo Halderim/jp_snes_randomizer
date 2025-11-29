@@ -5,12 +5,15 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/joho/godotenv"
 
 	"jp_snes_randomizer/internal/rom"
 	"jp_snes_randomizer/internal/tools/rncpropack"
@@ -26,6 +29,12 @@ type RandomizerSettings struct {
 }
 
 func main() {
+
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
@@ -158,8 +167,14 @@ func handleRandomize(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Arbeitsverzeichnisse vorbereiten
-	srcBinDir := "internal/uncompressed"
-	outDir := filepath.Join(os.TempDir(), fmt.Sprintf("randomizer_%d_%d", finalSeed, time.Now().UnixNano()))
+	srcBinDir := os.Getenv("BINDIR")
+	fmt.Println("Using BINDIR:", srcBinDir)
+	if srcBinDir == "" {
+		http.Error(w, "BINDIR Umgebungsvariable fehlt", http.StatusInternalServerError)
+		return
+	}
+	outpath := os.Getenv("OUTPATH")
+	outDir := filepath.Join(outpath, fmt.Sprintf("randomizer_%d_%d", finalSeed, time.Now().UnixNano()))
 	logDir := filepath.Join(outDir, "logs")
 	logPath := filepath.Join(logDir, "randomizer.log")
 
@@ -180,7 +195,7 @@ func handleRandomize(w http.ResponseWriter, r *http.Request) {
 
 	// ROM kopieren
 	expandedRom := filepath.Join(outDir, fmt.Sprintf("jp_randomized_seed%d.sfc", finalSeed))
-	if err := copyFile(settings.RomPath, expandedRom); err != nil {
+	if err := copyFile(os.Getenv("ROM"), expandedRom); err != nil {
 		http.Error(w, fmt.Sprintf("Fehler beim Kopieren der ROM: %v", err), http.StatusInternalServerError)
 		return
 	}
@@ -191,10 +206,17 @@ func handleRandomize(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	publicRom := filepath.Join(os.Getenv("PUBLICDIR"), fmt.Sprintf("jp_randomized_seed%d.sfc", finalSeed))
+
+	if err := copyFile(expandedRom, publicRom); err != nil {
+		http.Error(w, fmt.Sprintf("Fehler beim Bereitstellen der ROM zum Download: %v", err), http.StatusInternalServerError)
+		return
+	}
+
 	// Antwort senden
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]string{
-		"download": "/download?path=" + expandedRom,
+		"download": "/download?path=" + publicRom,
 		"seed":     fmt.Sprintf("%d", finalSeed),
 	})
 }
@@ -276,7 +298,7 @@ func handleDownload(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Sicherheitsprüfung: Nur Dateien aus dem Temp-Verzeichnis erlauben
-	if !strings.HasPrefix(path, os.TempDir()) {
+	if !strings.HasPrefix(path, os.Getenv("PUBLICDIR")) {
 		http.Error(w, "Ungültiger Pfad", http.StatusForbidden)
 		return
 	}
