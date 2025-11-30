@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme  {
+    --color-terminal: #c7fec6;
+    --font-pixel: 'Pixelify Sans', display, sans-serif;
+}
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';

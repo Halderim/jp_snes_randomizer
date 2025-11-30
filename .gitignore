@@ -6,3 +6,4 @@ internal/modbin/*
 internal/logic/*
 asar/*
 cmd/creditstext/*
+laravel/config/services.php

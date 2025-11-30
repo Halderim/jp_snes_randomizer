@@ -1,76 +1,152 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>🦖 Jurassic Park SNES Randomizer</h1>
-    <p class="subtitle">Randomisiere dein Jurassic Park SNES Spiel</p>
 
-    @if(session('error'))
-        <div class="alert alert-error">
-            {{ session('error') }}
-        </div>
-    @endif
+    <div class="intro text-xl text-terminal font-pixel absolute left-28 top-64"></div>
 
-    @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    <form id="randomizerForm">
-        @csrf
-
-        <div class="form-group">
-            <label for="rom">ROM-Datei hochladen (.smc oder .sfc)</label>
-            <input type="file" id="rom" name="rom" accept=".smc,.sfc" required>
-            <p class="help-text">Die ROM muss eine erweiterte 4MB Version von Jurassic Park USA v1.0 sein</p>
-        </div>
-
-        <div class="form-group">
-            <label for="difficulty">Schwierigkeitsgrad</label>
-            <select id="difficulty" name="difficulty" required>
-                <option value="0">Easy - Nur ID-Karten werden randomisiert</option>
-                <option value="1" selected>Normal - ID-Karten und Items pro Etage</option>
-                <option value="2">Hard - ID-Karten und Items pro Gebäude</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="seed">Seed (optional)</label>
-            <input type="text" id="seed" name="seed" placeholder="Leer lassen für zufälligen Seed">
-            <p class="help-text">Geben Sie einen Seed ein, um die gleiche Randomisierung zu reproduzieren</p>
-        </div>
-
-        <div class="form-group">
-            <div class="checkbox-group">
-                <input type="checkbox" id="startLocations" name="startLocations" value="1">
-                <label for="startLocations">Zufällige Startposition</label>
+    <div class="content hidden absolute left-28 top-64">
+        <h1 class="text-2xl">Jurassic Park SNES Randomizer v0.3</h1>
+        
+        @if(session('error'))
+            <div class="alert alert-error">
+                {{ session('error') }}
             </div>
-        </div>
+        @endif
 
-        <div class="form-group">
-            <div class="checkbox-group">
-                <input type="checkbox" id="overworld" name="overworld" value="1" checked>
-                <label for="overworld">Overworld-Items randomisieren</label>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
             </div>
+        @endif
+
+        <form id="randomizerForm">
+            @csrf
+            
+            <label class="block cursor-pointer w-fit">
+            <!-- Das echte File-Input -->
+                <input
+                    type="file"
+                    class="hidden"
+                    id="rom"
+                    name="rom"
+                    accept=".sfc"
+                    onchange="showFileName(event)"
+                />
+
+                <!-- Sichtbarer Terminal-Button -->
+                <div
+                    class="flex items-center px-4 py-2
+                        border-4 border-terminal bg-black text-terminal font-pixel
+                        hover:bg-green-900/20 transition-colors"
+                >
+                    <span id="fileLabel">[ Select ROM file ]</span>
+                </div>
+            </label>
+            <p class="help-text mb-4">
+                You need to provide a valid Jurassic Park v1.0 ROM file.<br />
+                The ROM will be uploaded to the server for randomization and deleted afterwards.<br />
+                The Jurassic Park Classic Game Collection on Steam includes a valid ROM file.
+            </p>
+
+            <div class="form-group mb-4">
+                <label class="inline-block w-50" for="difficulty">Difficulty</label>
+                <select class="border-4 border-terminal bg-black p-1" id="difficulty" name="difficulty" required>
+                    <option value="0" selected>Easy - Only ID cards are randomized</option>
+                    <option value="1" >Normal - ID cards and items per floor (softlocks possible)</option>
+                    <option value="2">Hard - ID cards and items per building (softlocks possible)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="seed" class="inline-block w-50">Seed (optional)</label>
+                <input class="border-4 border-terminal bg-black p-1" type="number" min="0" step="1" id="seed" name="seed" placeholder="empty for random seed">
+                <p class="help-text ml-50">Integer between 0 and 9223372036854775807</p>
+            </div>
+
+            <label class="ml-50 mt-4 flex items-center cursor-pointer select-none">
+                <input
+                    type="checkbox"
+                    class="hidden peer"
+                    id="startLocations" 
+                    name="startLocations" 
+                    value="1"
+                />
+
+                <span
+                    class="w-5 h-5 flex items-center justify-center
+                        border-4 border-terminal bg-black text-terminal
+                        peer-checked:before:content-['X']
+                        before:content-[''] before:text-xl"
+                ></span>
+                <span class="ml-2 text-terminal font-pixel">Random start location</span>
+            </label>
+
+            <label class="ml-50 mt-4 flex items-center cursor-pointer select-none">
+                <input
+                    type="checkbox"
+                    class="hidden peer"
+                    id="overworld" 
+                    name="overworld" 
+                    value="1"
+                />
+
+                <span
+                    class="w-5 h-5 flex items-center justify-center
+                        border-4 border-terminal bg-black text-terminal
+                        peer-checked:before:content-['X']
+                        before:content-[''] before:text-xl"
+                ></span>
+                <span class="ml-2 text-terminal font-pixel">Randomize overworld items</span>
+            </label>
+
+            <button type="submit" class="cursor-pointer btn border-4 p-4 my-4 border-terminal bg-black hover:bg-terminal hover:text-black" id="submitBtn">Start randomization</button>
+        </form>
+
+        <div id="status" class="border-4 border-terminal bg-black p-4 mt-4 hidden">
+            <div class="" id="statusMessage"></div>
         </div>
 
-        <button type="submit" class="btn" id="submitBtn">Randomisierung starten</button>
-    </form>
+        <div id="result" class="hidden">
+            <div class="border-4 border-terminal bg-black p-4 mt-4" id="resultMessage">
+                <strong>Randomization successful!</strong>
+                <p>Seed: <span id="resultSeed"></span></p>                
+            </div>
 
-    <div id="status" class="status">
-        <div class="alert alert-info" id="statusMessage"></div>
-    </div>
-
-    <div id="result" style="display: none;">
-        <div class="alert alert-success">
-            <strong>Randomisierung erfolgreich!</strong>
-            <p>Seed: <span id="resultSeed"></span></p>
-            <a href="#" id="downloadLink" class="download-link">ROM herunterladen</a>
+            <a class="cursor-pointer inline-block border-4 p-4 mt-4 border-terminal bg-black hover:bg-terminal hover:text-black" href="#" id="downloadLink" class="download-link">Download ROM</a>
         </div>
     </div>
 @endsection
 
 @push('scripts')
+<script>
+    const text = "PRESS ANY KEY TO SKIP...\n\nBIOS LOADED ...\n\nMESSAGE \nMAIN SYSTEM CHECK ... OK\n\nACTION\nINITIALIZING RANDOMIZER ...\n\nOK\n\nRANDOMIZER READY\n\nMESSAGE ENDS ...";
+    const introElement = document.querySelector('.intro');
+
+    document.onkeydown = function(e) {
+        // Bei Tastendruck Intro überspringen
+        showContent();
+    };
+
+    let index = 0;
+    let speed = 35;
+    function typeIntro() {
+        if (index < text.length) {
+            introElement.innerHTML += text.charAt(index) === '\n' ? '<br />' : text.charAt(index);
+            index++;
+            setTimeout(typeIntro, speed);
+        } else {
+            // Intro fertig, warten und text ausblenden
+            setTimeout(showContent, 1000);
+        }
+    }
+
+    function showContent() {
+        document.querySelector('.intro').style.display = 'none';
+        document.querySelector('.content').style.display = 'block';
+    }
+
+    typeIntro();
+</script>
 <script>
     document.getElementById('randomizerForm').addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -93,9 +169,9 @@
 
         // Upload ROM
         submitBtn.disabled = true;
-        submitBtn.textContent = 'ROM wird hochgeladen...';
+        submitBtn.textContent = 'Uploading...';
         statusDiv.classList.add('active');
-        statusMessage.textContent = 'ROM wird hochgeladen und geprüft...';
+        statusMessage.textContent = 'ROM upload and check...';
 
         try {
             const uploadFormData = new FormData();
@@ -110,12 +186,12 @@
             const uploadResult = await uploadResponse.json();
 
             if (!uploadResult.success) {
-                throw new Error(uploadResult.message || 'Upload fehlgeschlagen');
+                throw new Error(uploadResult.message || 'Upload failed');
             }
 
-            // Randomisierung starten
-            submitBtn.textContent = 'Randomisierung läuft...';
-            statusMessage.textContent = 'Randomisierung wird durchgeführt. Dies kann einige Minuten dauern...';
+            // Start randomization
+            submitBtn.textContent = 'Randomization in progress...';
+            statusMessage.textContent = 'Randomization is being performed. This may take a few minutes...';
 
             const randomizeData = {
                 romPath: uploadResult.path,
@@ -137,7 +213,7 @@
             const randomizeResult = await randomizeResponse.json();
 
             if (!randomizeResult.success) {
-                throw new Error(randomizeResult.message || 'Randomisierung fehlgeschlagen');
+                throw new Error(randomizeResult.message || 'Randomization failed');
             }
 
             // Erfolg
@@ -154,8 +230,7 @@
 
             // Formular zurücksetzen
             document.getElementById('randomizerForm').reset();
-            document.getElementById('difficulty').value = '1';
-            document.getElementById('overworld').checked = true;
+            
 
         } catch (error) {
             statusDiv.classList.add('active');
@@ -163,7 +238,7 @@
             statusMessage.parentElement.className = 'alert alert-error';
         } finally {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Randomisierung starten';
+            submitBtn.textContent = 'Start randomization';
         }
     });
 </script>
